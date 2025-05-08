@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #ff6b6b;
+  --dark-color: #2c3e50;
+  --light-color: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+}
+
+.hero-section {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.upload-area {
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: white;
+}
+
+.upload-area:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(74, 111, 165, 0.05);
+}
+
+#previewContainer {
+  min-height: 150px;
+}
+
+.preview-image {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.remove-image {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.remove-image:hover {
+  background: var(--secondary-color);
+}
+
+.bg-light {
+  background-color: var(--light-color) !important;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      padding: 60px 0;
+  }
+  
+  .navbar-nav {
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  
+  .nav-link {
+      padding: 0.5rem 0;
+      margin-left: 1rem;
+  }
+  
+  .upload-area {
+      padding: 20px;
+  }
+  
+  .preview-image {
+      width: 100px;
+      height: 100px;
+  }
+}
