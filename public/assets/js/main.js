@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // 1. Load fun fact from API
   $.ajax({
     url: 'http://numbersapi.com/1/30/date?json',
     method: 'GET',
@@ -20,19 +19,18 @@ $(document).ready(function() {
     }
   });
 
-  // 2. File upload functionality
   const fileInput = $('#fileInput');
   const uploadBtn = $('#uploadBtn');
   const previewContainer = $('#previewContainer');
   let files = [];
 
-  // Handle file selection
+
   fileInput.on('change', function() {
     files = this.files;
     handleFiles(files);
   });
 
-  // Handle drag and drop
+
   const uploadArea = $('.upload-area');
   
   uploadArea.on('dragover', function(e) {
@@ -51,7 +49,7 @@ $(document).ready(function() {
     handleFiles(files);
   });
 
-  // Process files and show previews
+
   function handleFiles(filesToProcess) {
     previewContainer.empty().removeClass('justify-content-start').addClass('justify-content-center');
     
@@ -77,7 +75,6 @@ $(document).ready(function() {
     }
   }
 
-  // Remove image
   previewContainer.on('click', '.remove-image', function() {
     const index = $(this).parent().index();
     files = Array.from(files).filter((_, i) => i !== index);
@@ -88,7 +85,7 @@ $(document).ready(function() {
     }
   });
 
-  // Upload files
+
   uploadBtn.on('click', function() {
     if (files.length === 0) return;
 

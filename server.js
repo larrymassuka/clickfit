@@ -7,14 +7,14 @@ const mysql = require('mysql2/promise');
 const app = express();
 const PORT = 3000;
 
-// Create directories if they don't exist
+
 const publicDir = path.join(__dirname, 'public');
 const uploadDir = path.join(publicDir, 'uploads');
 
 if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir);
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
-// Configure Multer
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, uploadDir),
   filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
@@ -33,7 +33,7 @@ const upload = multer({
   }
 });
 
-// Database setup
+
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
@@ -43,11 +43,11 @@ const pool = mysql.createPool({
   connectionLimit: 10
 });
 
-// Middleware
+
 app.use(express.static(publicDir));
 app.use(express.json());
 
-// Routes
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(publicDir, 'index.html'));
 });
@@ -67,7 +67,7 @@ app.post('/api/upload', upload.array('images', 5), async (req, res) => {
   }
 });
 
-// Database initialization
+
 async function initDB() {
   try {
     const conn = await pool.getConnection();
@@ -101,13 +101,13 @@ async function initDB() {
   }
 }
 
-// Error handling
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   initDB();

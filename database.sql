@@ -1,11 +1,10 @@
--- Create database
 CREATE DATABASE IF NOT EXISTS clickfit
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Use database
+
 USE clickfit;
 
--- Create users table
+
 CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL,
@@ -15,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users (
     UNIQUE KEY (email)
 );
 
--- Create stored procedure
+
 DELIMITER //
 CREATE PROCEDURE IF NOT EXISTS addUser(
     IN p_email VARCHAR(255),
