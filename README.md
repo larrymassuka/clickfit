@@ -21,8 +21,7 @@
 ### Installation
 
 ## Clone repository
-git clone
-cd clickfit
+git clone https://github.com/larrymassuka/clickfit.git
 
 ## Install dependencies
 npm install
