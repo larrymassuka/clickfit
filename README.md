@@ -20,15 +20,15 @@
 
 ### Installation
 
-# Clone repository
+## Clone repository
 git clone
 cd clickfit
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# Set up database (run in MySQL shell)
-mysql -u larrymassuka -p < database.sql
+## Set up database (run in MySQL shell)
+mysql -u root -p < database.sql
 
-# Launch application
+## Launch application
 node server.js
