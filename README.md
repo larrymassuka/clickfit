@@ -5,7 +5,7 @@
 - MySQL user management
 - Responsive UI with smooth animations
 
-## 🛠 Tech Stack
+## Tech Stack
 | Area        | Technologies Used |
 |-------------|-------------------|
 | **Frontend** | HTML5, CSS3, JavaScript (ES6+), jQuery 3.6, Bootstrap 5 |
@@ -21,7 +21,7 @@
 ### Installation
 
 # Clone repository
-git clone https://github.com/larrymassuka/clickfit.git
+git clone
 cd clickfit
 
 # Install dependencies
